@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,14 +28,43 @@ namespace PM2E15581.Views
         {
             try
             {
-                await Share.RequestAsync(
-                   new ShareTextRequest
-                   {
-                       Title = "UBICACIÓN",
-                       Text = "Coordenadas: ",
-                       Uri = "https://maps.google.com/?q=" + _latitud + "," + _longitud
-                   }
-                    );
+                var screenshot = await Screenshot.CaptureAsync();
+                var stream = await screenshot.OpenReadAsync();
+
+                //var Image = ImageSource.FromStream(() => stream);
+
+                //Aquí debería guardar la imagen
+                //var dest = System.IO.File.OpenWrite(path);
+                //await stream.CopyToAsync(dest);
+
+                /*new Plugin.Media.Abstractions.MediaFile
+                {
+                    Directory = "MisFotos",
+                    Name = "test.jpg",
+                    path = "/"
+                };*/
+
+                /*var image = await MediaPicker.PickPhotoAsync();
+                if (image == null)
+                {
+                    return;
+                }*/
+                byte[] screenshotarray;
+                using (System.IO.MemoryStream memory = new MemoryStream())
+                {
+                    stream.CopyTo(memory);
+                    screenshotarray = memory.ToArray();
+                }
+
+                var tempFilename = "Test.png";
+                String filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), tempFilename);
+                File.WriteAllBytes(filePath, screenshotarray);
+
+                await Share.RequestAsync(new ShareFileRequest
+                {
+                    Title = "Mi Ubicacion",
+                    File = new ShareFile(filePath)
+                });
             }
             catch
             {
