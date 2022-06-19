@@ -14,5 +14,10 @@ namespace PM2E15581.Views
         {
             InitializeComponent();
         }
+
+        private async void btnlistasitios_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PageSitios());
+        }
     }
 }

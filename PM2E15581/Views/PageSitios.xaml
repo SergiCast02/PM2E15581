@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E15581.Views.PageSitios">
+
+    <StackLayout Orientation="Vertical" Margin="25,25,25,25">
+        <ScrollView HeightRequest="550">
+            <ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label HorizontalTextAlignment="Center" Padding="5, 10, 5, 10" Grid.Column="0"
+                                       Text="HOLA"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+
+        <StackLayout Orientation="Horizontal" Margin="0, 25, 0, 0">
+            <Button HorizontalOptions="FillAndExpand" Text="Eliminar Casa"></Button>
+            <Button HorizontalOptions="FillAndExpand" Text="Ver Mapa"></Button>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

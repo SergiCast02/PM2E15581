@@ -25,7 +25,6 @@
         <ScrollView Padding="25,0,25,0">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"></RowDefinition><!--Fila fantasma, creo que es el header por defecto-->
                     <RowDefinition Height="75"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
@@ -34,20 +33,20 @@
                 </Grid.RowDefinitions>
 
                 <!--ELEMENTO pagina principal-->
-                <StackLayout HorizontalOptions="Center" Orientation="Horizontal" BackgroundColor="AliceBlue" Grid.Row="1">
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal" BackgroundColor="AliceBlue" Grid.Row="0">
                     <Image Source="uthlogo.png"></Image>
 
                     <Label VerticalOptions="Center" Text="SITE VISITOR APP"></Label>
                 </StackLayout>
 
                 <!--ELEMENTO pagina principal-->
-                <StackLayout HorizontalOptions="Center" Orientation="Vertical" BackgroundColor="AntiqueWhite" Grid.Row="2">
+                <StackLayout HorizontalOptions="Center" Orientation="Vertical" BackgroundColor="AntiqueWhite" Grid.Row="1">
                     <Label HorizontalOptions="Center" Text="IMAGEN SITIO VISITADO"></Label>
                     <Image x:Name="imgsitiovisitado" HeightRequest="200" WidthRequest="200" BackgroundColor="Beige"></Image>
                 </StackLayout>
 
                 <!--ELEMENTO pagina principal-->
-                <StackLayout Orientation="Vertical" BackgroundColor="Aqua" Grid.Row="3">
+                <StackLayout Orientation="Vertical" BackgroundColor="Aqua" Grid.Row="2">
                     <!--SUB-ELEMENTO-->
                     <StackLayout Orientation="Vertical">
                         <Label Text="Latitude"></Label>
@@ -68,13 +67,13 @@
                 </StackLayout>
 
                 <!--ELEMENTO pagina principal-->
-                <StackLayout Orientation="Horizontal" BackgroundColor="Aquamarine" Grid.Row="4">
+                <StackLayout Orientation="Horizontal" BackgroundColor="Aquamarine" Grid.Row="3">
                     <Button HorizontalOptions="FillAndExpand" Text="Agregar"></Button>
-                    <Button HorizontalOptions="FillAndExpand" Text="Lista Sitios"></Button>
+                    <Button x:Name="btnlistasitios" Clicked="btnlistasitios_Clicked" HorizontalOptions="FillAndExpand" Text="Lista Sitios"></Button>
                 </StackLayout>
 
                 <!--ELEMENTO pagina principal-->
-                <StackLayout BackgroundColor="Azure" Grid.Row="5">
+                <StackLayout BackgroundColor="Azure" Grid.Row="4">
                     <Button Padding="50,0,50,0" HorizontalOptions="CenterAndExpand" Text="Salir App"></Button>
                 </StackLayout>
             </Grid>

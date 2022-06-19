@@ -11,7 +11,8 @@ namespace PM2E15581
         {
             InitializeComponent();
 
-            MainPage = new PagePrincipal();
+            //MainPage = new PagePrincipal();
+            MainPage = new NavigationPage(new PagePrincipal());
         }
 
         protected override void OnStart()
