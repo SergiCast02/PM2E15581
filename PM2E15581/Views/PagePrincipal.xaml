@@ -33,7 +33,7 @@
                 </Grid.RowDefinitions>
 
                 <!--ELEMENTO pagina principal-->
-                <StackLayout HorizontalOptions="Center" Orientation="Horizontal" BackgroundColor="AliceBlue" Grid.Row="0">
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Grid.Row="0">
                     <Image Source="uthlogo.png"></Image>
 
                     <Label VerticalOptions="Center" Text="SITE VISITOR APP"></Label>
@@ -50,7 +50,7 @@
                 </StackLayout>
 
                 <!--ELEMENTO pagina principal-->
-                <StackLayout Orientation="Vertical" BackgroundColor="Aqua" Grid.Row="2">
+                <StackLayout Orientation="Vertical" Grid.Row="2">
                     <!--SUB-ELEMENTO-->
                     <StackLayout Orientation="Vertical">
                         <Label Text="Latitude"></Label>
@@ -71,13 +71,13 @@
                 </StackLayout>
 
                 <!--ELEMENTO pagina principal-->
-                <StackLayout Orientation="Horizontal" BackgroundColor="Aquamarine" Grid.Row="3">
+                <StackLayout Orientation="Horizontal" Grid.Row="3">
                     <Button x:Name="btnagregarsitio" Clicked="btnagregarsitio_Clicked" HorizontalOptions="FillAndExpand" Text="Agregar"></Button>
                     <Button x:Name="btnlistasitios" Clicked="btnlistasitios_Clicked" HorizontalOptions="FillAndExpand" Text="Lista Sitios"></Button>
                 </StackLayout>
 
                 <!--ELEMENTO pagina principal-->
-                <StackLayout BackgroundColor="Azure" Grid.Row="4">
+                <StackLayout Grid.Row="4">
                     <Button x:Name="btnsalirapp" Clicked="btnsalirapp_Clicked" Margin="0,25,0,0" Padding="50,0,50,0" HorizontalOptions="CenterAndExpand" Text="Salir App"></Button>
                 </StackLayout>
             </Grid>

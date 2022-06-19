@@ -64,8 +64,16 @@ namespace PM2E15581.Views
 
         private async void btnvermapa_Clicked(object sender, EventArgs e)
         {
-            var sitio = (Sitios)elemento.Item;
-            await Navigation.PushAsync(new PageMapa(Double.Parse(sitio.latitud), Double.Parse(sitio.longitud), sitio.descripcion)); // Abre el Page de Mapa
+            try
+            {
+                var sitio = (Sitios)elemento.Item;
+                await Navigation.PushAsync(new PageMapa(Double.Parse(sitio.latitud), Double.Parse(sitio.longitud), sitio.descripcion)); // Abre el Page de Mapa
+            }
+            catch (Exception)
+            {
+                await DisplayAlert("Aviso", "Escoja un elemento", "OK");
+            }
+            
         }
     }
 }

@@ -23,9 +23,23 @@ namespace PM2E15581.Views
             _descripcion = descripcion;
         }
 
-        private void btncompartirimgubicacion_Clicked(object sender, EventArgs e)
+        private async void btncompartirimgubicacion_Clicked(object sender, EventArgs e)
         {
+            try
+            {
+                await Share.RequestAsync(
+                   new ShareTextRequest
+                   {
+                       Title = "UBICACIÓN",
+                       Text = "Coordenadas: ",
+                       Uri = "https://maps.google.com/?q=" + _latitud + "," + _longitud
+                   }
+                    );
+            }
+            catch
+            {
 
+            }
         }
 
         protected override async void OnAppearing()

@@ -29,7 +29,7 @@
                                        Text="{Binding latitud}"/>
                                 <Label HorizontalTextAlignment="Center" Padding="5, 10, 5, 10" Grid.Column="2"
                                        Text="{Binding longitud}"/>
-                                <Image BackgroundColor="Black" HorizontalOptions="FillAndExpand" Grid.Column="3"
+                                <Image HorizontalOptions="FillAndExpand" Grid.Column="3"
                                        Source="{Binding imagen, Converter={StaticResource ByteToImage}}"/>
                             </Grid>
                         </ViewCell>
