@@ -6,14 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace PM2E15581
+namespace PM2E15581.Views
 {
-    public partial class MainPage : ContentPage
+    public partial class PagePrincipal : ContentPage
     {
-        public MainPage()
+        public PagePrincipal()
         {
             InitializeComponent();
-
         }
     }
 }

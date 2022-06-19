@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E15581.Views.PagePrincipal">
+
+    <StackLayout>
+        <!--
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
+        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
+        <Label FontSize="16" Padding="30,24,30,0">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="Learn more at "/>
+                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        -->
+
+        <ScrollView Padding="25,0,25,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition><!--Fila fantasma, creo que es el header por defecto-->
+                    <RowDefinition Height="75"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <!--ELEMENTO pagina principal-->
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal" BackgroundColor="AliceBlue" Grid.Row="1">
+                    <Image Source="uthlogo.png"></Image>
+
+                    <Label VerticalOptions="Center" Text="SITE VISITOR APP"></Label>
+                </StackLayout>
+
+                <!--ELEMENTO pagina principal-->
+                <StackLayout HorizontalOptions="Center" Orientation="Vertical" BackgroundColor="AntiqueWhite" Grid.Row="2">
+                    <Label HorizontalOptions="Center" Text="IMAGEN SITIO VISITADO"></Label>
+                    <Image x:Name="imgsitiovisitado" HeightRequest="200" WidthRequest="200" BackgroundColor="Beige"></Image>
+                </StackLayout>
+
+                <!--ELEMENTO pagina principal-->
+                <StackLayout Orientation="Vertical" BackgroundColor="Aqua" Grid.Row="3">
+                    <!--SUB-ELEMENTO-->
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Latitude"></Label>
+                        <Entry IsReadOnly="True"></Entry>
+                    </StackLayout>
+
+                    <!--SUB-ELEMENTO-->
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Longitud"></Label>
+                        <Entry IsReadOnly="True"></Entry>
+                    </StackLayout>
+
+                    <!--SUB-ELEMENTO-->
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Descripción"></Label>
+                        <Editor HeightRequest="100"></Editor>
+                    </StackLayout>
+                </StackLayout>
+
+                <!--ELEMENTO pagina principal-->
+                <StackLayout Orientation="Horizontal" BackgroundColor="Aquamarine" Grid.Row="4">
+                    <Button HorizontalOptions="FillAndExpand" Text="Agregar"></Button>
+                    <Button HorizontalOptions="FillAndExpand" Text="Lista Sitios"></Button>
+                </StackLayout>
+
+                <!--ELEMENTO pagina principal-->
+                <StackLayout BackgroundColor="Azure" Grid.Row="5">
+                    <Button Padding="50,0,50,0" HorizontalOptions="CenterAndExpand" Text="Salir App"></Button>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+
+
+    </StackLayout>
+
+</ContentPage>
