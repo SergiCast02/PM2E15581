@@ -42,7 +42,11 @@
                 <!--ELEMENTO pagina principal-->
                 <StackLayout HorizontalOptions="Center" Orientation="Vertical" BackgroundColor="AntiqueWhite" Grid.Row="1">
                     <Label HorizontalOptions="Center" Text="IMAGEN SITIO VISITADO"></Label>
-                    <Image x:Name="imgsitiovisitado" HeightRequest="200" WidthRequest="200" BackgroundColor="Beige"></Image>
+                    <Image x:Name="imgsitiovisitado" HeightRequest="200" WidthRequest="200" BackgroundColor="Beige">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="imgsitiovisitado_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
                 </StackLayout>
 
                 <!--ELEMENTO pagina principal-->
@@ -50,31 +54,31 @@
                     <!--SUB-ELEMENTO-->
                     <StackLayout Orientation="Vertical">
                         <Label Text="Latitude"></Label>
-                        <Entry IsReadOnly="True"></Entry>
+                        <Entry x:Name="latitud" IsReadOnly="True"></Entry>
                     </StackLayout>
 
                     <!--SUB-ELEMENTO-->
                     <StackLayout Orientation="Vertical">
                         <Label Text="Longitud"></Label>
-                        <Entry IsReadOnly="True"></Entry>
+                        <Entry x:Name="longitud" IsReadOnly="True"></Entry>
                     </StackLayout>
 
                     <!--SUB-ELEMENTO-->
                     <StackLayout Orientation="Vertical">
                         <Label Text="Descripción"></Label>
-                        <Editor HeightRequest="100"></Editor>
+                        <Editor x:Name="descripcion" HeightRequest="100"></Editor>
                     </StackLayout>
                 </StackLayout>
 
                 <!--ELEMENTO pagina principal-->
                 <StackLayout Orientation="Horizontal" BackgroundColor="Aquamarine" Grid.Row="3">
-                    <Button HorizontalOptions="FillAndExpand" Text="Agregar"></Button>
+                    <Button x:Name="btnagregarsitio" Clicked="btnagregarsitio_Clicked" HorizontalOptions="FillAndExpand" Text="Agregar"></Button>
                     <Button x:Name="btnlistasitios" Clicked="btnlistasitios_Clicked" HorizontalOptions="FillAndExpand" Text="Lista Sitios"></Button>
                 </StackLayout>
 
                 <!--ELEMENTO pagina principal-->
                 <StackLayout BackgroundColor="Azure" Grid.Row="4">
-                    <Button Padding="50,0,50,0" HorizontalOptions="CenterAndExpand" Text="Salir App"></Button>
+                    <Button x:Name="btnsalirapp" Clicked="btnsalirapp_Clicked" Margin="0,25,0,0" Padding="50,0,50,0" HorizontalOptions="CenterAndExpand" Text="Salir App"></Button>
                 </StackLayout>
             </Grid>
         </ScrollView>

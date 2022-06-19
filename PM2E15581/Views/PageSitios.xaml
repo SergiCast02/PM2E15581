@@ -1,20 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Converters="clr-namespace:PM2E15581.Converters"
              x:Class="PM2E15581.Views.PageSitios">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:ByteArrayToImage x:Key="ByteToImage"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <StackLayout Orientation="Vertical" Margin="25,25,25,25">
         <ScrollView HeightRequest="550">
-            <ListView>
+            <ListView x:Name="ListaSitios" ItemTapped="ListaSitios_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
                                 <Label HorizontalTextAlignment="Center" Padding="5, 10, 5, 10" Grid.Column="0"
-                                       Text="HOLA"/>
+                                       Text="{Binding id}"/>
+                                <Label HorizontalTextAlignment="Center" Padding="5, 10, 5, 10" Grid.Column="1"
+                                       Text="{Binding latitud}"/>
+                                <Label HorizontalTextAlignment="Center" Padding="5, 10, 5, 10" Grid.Column="2"
+                                       Text="{Binding longitud}"/>
+                                <Image BackgroundColor="Black" HorizontalOptions="FillAndExpand" Grid.Column="3"
+                                       Source="{Binding imagen, Converter={StaticResource ByteToImage}}"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
@@ -23,8 +39,8 @@
         </ScrollView>
 
         <StackLayout Orientation="Horizontal" Margin="0, 25, 0, 0">
-            <Button HorizontalOptions="FillAndExpand" Text="Eliminar Casa"></Button>
-            <Button HorizontalOptions="FillAndExpand" Text="Ver Mapa"></Button>
+            <Button x:Name="btneliminarcasa" Clicked="btneliminarcasa_Clicked" HorizontalOptions="FillAndExpand" Text="Eliminar Casa"></Button>
+            <Button x:Name="btnvermapa" Clicked="btnvermapa_Clicked" HorizontalOptions="FillAndExpand" Text="Ver Mapa"></Button>
         </StackLayout>
     </StackLayout>
 </ContentPage>
