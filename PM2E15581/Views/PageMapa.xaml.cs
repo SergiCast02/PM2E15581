@@ -8,6 +8,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
+using ImageFromXamarinUI;
 
 namespace PM2E15581.Views
 {
@@ -29,7 +30,9 @@ namespace PM2E15581.Views
             try
             {
                 var screenshot = await Screenshot.CaptureAsync();
-                var stream = await screenshot.OpenReadAsync();
+                //var stream = await screenshot.OpenReadAsync();
+
+                var stream = await mapa.CaptureImageAsync();
 
                 //var Image = ImageSource.FromStream(() => stream);
 
